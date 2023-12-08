@@ -16,7 +16,7 @@ spec:
 kind: VirtualService
 apiVersion: networking.istio.io/v1alpha3
 metadata:
-  name: service-blue-green-deployment
+  name: service-blue-green-vr
   namespace: default
   managedFields:
     - manager: Go-http-client
@@ -42,7 +42,7 @@ spec:
 kind: DestinationRule
 apiVersion: networking.istio.io/v1alpha3
 metadata:
-  name: service-blue-green-deployment
+  name: service-blue-green-dr
   namespace: default
   managedFields:
     - manager: Go-http-client
