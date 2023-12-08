@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: blue-app
+  name: blue-green-deployment
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: green-app
+  name: blue-green-deployment-green-version
 spec:
   selector:
     matchLabels:
@@ -51,12 +51,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: blue-green-service
+  name: service-blue-green-deployment
 spec:
   selector:
     app: blue-green-deployment
   ports:
     - name: http
       port: 80
-      nodePort: 30080
-  type: NodePort
+  type: ClusterIP
+
+##  while true; do curl http://192.168.59.112:30080 | grep "h1"; echo; sleep 0.5; done
