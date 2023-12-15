@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: blue-deployment
-        image: totinbolo45/blue:v1
+        image: totinbolo45/blue:v2
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -40,7 +40,7 @@ spec:
     spec:
       containers:
       - name: green-deployment
-        image: totinbolo45/green:v1
+        image: totinbolo45/green:v2
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
